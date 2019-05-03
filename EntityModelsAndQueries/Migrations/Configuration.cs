@@ -19,18 +19,18 @@ namespace EntityModelsAndQueries.Migrations
 
             if (!context.Types.Any())
             {
-                context.Types.AddOrUpdate(type => type.Id,
-                    new Models.Domain.Type() { Name = "Single", Description = "A room assigned to one person. May have one or more beds." },
-                    new Models.Domain.Type() { Name = "Double", Description = "A room assigned to two people. May have one or more beds." },
-                    new Models.Domain.Type() { Name = "Queen", Description = "A room with a queen-sized bed. May be occupied by one or more people." },
-                    new Models.Domain.Type() { Name = "King", Description = "A room with a king-sized bed. May be occupied by one or more people." },
-                    new Models.Domain.Type() { Name = "Master Suite", Description = "A parlour or living room connected to one or more bedrooms." }
+                context.Types.AddOrUpdate(type => type.Name,
+                    new Models.Domain.RoomType() { Name = "Single", Description = "A room assigned to one person. May have one or more beds." },
+                    new Models.Domain.RoomType() { Name = "Double", Description = "A room assigned to two people. May have one or more beds." },
+                    new Models.Domain.RoomType() { Name = "Queen", Description = "A room with a queen-sized bed. May be occupied by one or more people." },
+                    new Models.Domain.RoomType() { Name = "King", Description = "A room with a king-sized bed. May be occupied by one or more people." },
+                    new Models.Domain.RoomType() { Name = "Master Suite", Description = "A parlour or living room connected to one or more bedrooms." }
                     );
             }
 
             if (!context.Rooms.Any())
             {
-                context.Rooms.AddOrUpdate(room => room.Id,
+                context.Rooms.AddOrUpdate(room => room.Number,
                     new Models.Domain.Room() { Number = "1A", DailyRate = 50m, Type = context.Types.FirstOrDefault(type => type.Name == "Single") },
                     new Models.Domain.Room() { Number = "1B", DailyRate = 50m, Type = context.Types.FirstOrDefault(type => type.Name == "Single") },
                     new Models.Domain.Room() { Number = "2A", DailyRate = 90m, Type = context.Types.FirstOrDefault(type => type.Name == "Double") },
@@ -46,7 +46,7 @@ namespace EntityModelsAndQueries.Migrations
 
             if (!context.Customers.Any())
             {
-                context.Customers.AddOrUpdate(customer => customer.Id,
+                context.Customers.AddOrUpdate(customer => customer.FirstName,
                     new Models.Domain.Customer() { FirstName = "Alan", LastName = "Foster", Email = "alanfoster@assignment2.com", PhoneNumber = "(204) – 111-1111" },
                     new Models.Domain.Customer() { FirstName = "Harley", LastName = "Moore", Email = "harleymoore@assignment2.com", PhoneNumber = "(204) – 222-2222" },
                     new Models.Domain.Customer() { FirstName = "Kara", LastName = "Rogers", Email = "kararogers@assignment2.com", PhoneNumber = "(204) – 333-3333" },
@@ -57,7 +57,7 @@ namespace EntityModelsAndQueries.Migrations
 
             if (!context.Reservations.Any())
             {
-                context.Reservations.AddOrUpdate(res => res.Id,
+                context.Reservations.AddOrUpdate(res => res.Code,
                     new Models.Domain.Reservation()
                     {
                         Code = "PMJYW5WH2",

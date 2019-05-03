@@ -23,7 +23,7 @@ namespace EntityModelsAndQueries.Models
     {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Room> Rooms { get; set; }
-        public DbSet<Type> Types { get; set; }
+        public DbSet<RoomType> Types { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
