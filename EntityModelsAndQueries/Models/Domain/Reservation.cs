@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EntityModelsAndQueries.Models.Domain
 {
@@ -13,8 +12,5 @@ namespace EntityModelsAndQueries.Models.Domain
         public Decimal TotalAmount { get; set; }
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
-        public virtual List<Room> Rooms { get; set; }
-        public virtual List<Customer> Customers { get; set; }
-
     }
 }
