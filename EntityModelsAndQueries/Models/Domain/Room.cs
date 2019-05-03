@@ -1,4 +1,6 @@
-﻿namespace EntityModelsAndQueries.Models.Domain
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace EntityModelsAndQueries.Models.Domain
 {
     public class Room
     {
@@ -6,5 +8,6 @@
         public string Number { get; set; }
         public decimal DailyRate { get; set; }
         public virtual RoomType Type { get; set; }
+        public int TypeId { get; set; }
     }
 }

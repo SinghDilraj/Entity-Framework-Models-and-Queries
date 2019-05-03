@@ -10,7 +10,7 @@ namespace EntityModelsAndQueries.Controllers
         public ActionResult Rooms()
         {
             System.Collections.Generic.List<RoomViewModel> rooms = DbContext.Reservations
-                .Where(p => p.CheckOutDate > new System.DateTime(2019, 05, 09) && p.CheckInDate < new System.DateTime(2019, 05, 14))
+                .Where(p => p.CheckOutDate < new System.DateTime(2019, 05, 09) && p.CheckInDate > new System.DateTime(2019, 05, 14))
                 .Select(p => new RoomViewModel()
                 {
                     RoomNumber = p.Room.Number,
