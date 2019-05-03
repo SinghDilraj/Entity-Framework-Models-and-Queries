@@ -8,6 +8,5 @@ namespace EntityModelsAndQueries.Models.Domain
         public string Number { get; set; }
         public decimal DailyRate { get; set; }
         public virtual RoomType Type { get; set; }
-        public int TypeId { get; set; }
     }
 }
